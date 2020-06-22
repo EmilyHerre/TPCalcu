@@ -13,53 +13,31 @@ package Estructuras;
 public class Cola {
 
     private Nodo primero, ultimo;
-    private int tamaño, elementos;
-    private int aiuda;
-
-    // tamaño <= 0 -> INFINITA lo infitnoto
-    // tamaño > 0 -> FINITA
-    public Cola(int tamaño) {
-        this.tamaño = tamaño;
-        elementos = 0;
-
-    }
-
-    public int size() {
-        return elementos;
-
-    }
 
     //Encolar encoladero
-    public char enqueue(char dato) throws ColaException {
+    public String enqueue(String dato) throws ColaException {
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
-
-        if (tamaño > 0 && elementos == tamaño) {
-            throw new ColaException("La cola está llena");
-        } else {
             if (primero == null) {
                 primero = ultimo = nuevo;
             } else {
                 ultimo.setSiguiente(nuevo);
                 ultimo = nuevo;
             }
-            elementos++;
-        }
         return ultimo.getDato();
     }
     
 
     //Desencolar
-    public char dequeue() throws ColaException {
+    public String dequeue() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
         }
-        char dato = primero.getDato();
+        String dato = primero.getDato();
         primero = primero.getSiguiente();
         if (primero == null) {
             ultimo = null;
         }
-        elementos--;
         return dato;
     }
 
@@ -67,21 +45,21 @@ public class Cola {
         return primero == null;
     }
 
-    public char front() throws ColaException {
+    public String front() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
         }
         return primero.getDato();
     }
 
-    public int search(char dato) throws ColaException {
+    public int search(String dato) throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
         }
 
         int contador = 0;
         for (Nodo actual = primero; actual != null; actual = actual.getSiguiente()) {
-            if (actual.getDato() == dato) {
+            if (actual.getDato().equals(dato)) {
                 return contador;
             }
             contador++;

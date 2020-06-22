@@ -11,14 +11,14 @@ package Estructuras;
  */
 public class Nodo {
 
-    char dato;
+    String dato;
     Nodo siguiente;
 
-    public char getDato() {
+    public String getDato() {
         return dato;
     }
 
-    public void setDato(char dato) {
+    public void setDato(String dato) {
         this.dato = dato;
     }
 

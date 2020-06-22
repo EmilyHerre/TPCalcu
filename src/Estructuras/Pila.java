@@ -14,21 +14,13 @@ package Estructuras;
 public class Pila {
 
     private Nodo cima;
-    private int tamaño;
-    private int elementos;
-
-    //Si tamaño > 0 -> pila es finita 
-    //Si tamaño <= 0 -> pila es infinita
-    public Pila(int tamaño) {
-        this.tamaño = tamaño;
-    }
 
     public boolean empty() {
         return cima == null;
     }
 
     //Cima
-    public char top() throws PilaException {
+    public String top() throws PilaException {
         if (cima == null) {
             throw new PilaException("La lista está vacía");
         }
@@ -36,25 +28,20 @@ public class Pila {
     }
 
     //Desapilar
-    public char pop() throws PilaException {
-        char dato;
+    public String pop() throws PilaException {
+        String dato;
         if (cima == null) {
             throw new PilaException("La pila está vacía ");
         } else {
             dato = cima.getDato();
             cima = cima.getSiguiente();
-            elementos--;
         }
         return dato;
 
     }
 
     //Apilar
-    public char push(char dato) throws PilaException {
-        if (tamaño > 0 && tamaño == elementos) {
-            throw new PilaException("La pila está llena");
-        } else {
-
+    public String push(String dato) throws PilaException {
             Nodo nuevo = new Nodo();
             nuevo.setDato(dato);
 
@@ -64,20 +51,19 @@ public class Pila {
                 nuevo.setSiguiente(cima);
                 cima = nuevo;
             }
-            elementos++;
 
             return cima.getDato();
         }
-    }
+    
 
-    public int search(char dato) throws PilaException {
+    public int search(String dato) throws PilaException {
         int contador = 0;
         if (cima == null) {
             throw new PilaException("La pila está vacía");
         } else {
             Nodo actual = cima;
             while (actual != null) {
-                if (actual.getDato() == dato) {
+                if (actual.getDato().equals(dato)) {
                     return contador;
                 }
                 contador++;
@@ -86,10 +72,6 @@ public class Pila {
         }
         return -1;
 
-    }
-
-    public int size() {
-        return elementos;
     }
 
 }
