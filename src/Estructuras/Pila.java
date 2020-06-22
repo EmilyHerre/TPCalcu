@@ -9,11 +9,12 @@ package Estructuras;
 
 /**
  *
- * @author alberto
+ * @author Nosotras :D
  */
 public class Pila {
 
     private Nodo cima;
+    private int tam;
 
     public boolean empty() {
         return cima == null;
@@ -51,7 +52,7 @@ public class Pila {
                 nuevo.setSiguiente(cima);
                 cima = nuevo;
             }
-
+            tam++;
             return cima.getDato();
         }
     
@@ -73,5 +74,10 @@ public class Pila {
         return -1;
 
     }
+    
+    public int size() {
+        return tam;
+    }
+            
 
 }
