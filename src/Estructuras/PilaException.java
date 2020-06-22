@@ -14,8 +14,8 @@ import javax.swing.JOptionPane;
  */
 public class PilaException extends Exception{
 
-    public PilaException(String message) {
-        JOptionPane.showMessageDialog(null, message);
+    public PilaException(String messa) {
+        JOptionPane.showMessageDialog(null, messa);
     }
 
     
