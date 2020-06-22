@@ -28,7 +28,7 @@ public class Cola {
 
     }
 
-    //Encolar
+    //Encolar encoladero
     public char enqueue(char dato) throws ColaException {
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
