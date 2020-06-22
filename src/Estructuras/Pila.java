@@ -5,15 +5,13 @@
  */
 package Estructuras;
 
-
-
 /**
  *
  * @author Nosotras :D
  */
 public class Pila {
 
-    private Nodo cima;
+    private NodoPila cima;
     private int tam;
 
     public boolean empty() {
@@ -21,7 +19,7 @@ public class Pila {
     }
 
     //Cima
-    public String top() throws PilaException {
+    public char top() throws PilaException {
         if (cima == null) {
             throw new PilaException("La lista está vacía");
         }
@@ -29,42 +27,42 @@ public class Pila {
     }
 
     //Desapilar
-    public String pop() throws PilaException {
-        String dato;
+    public char pop() throws PilaException {
+        char dato;
         if (cima == null) {
             throw new PilaException("La pila está vacía ");
         } else {
             dato = cima.getDato();
             cima = cima.getSiguiente();
+            tam--;
         }
         return dato;
 
     }
 
     //Apilar
-    public String push(String dato) throws PilaException {
-            Nodo nuevo = new Nodo();
-            nuevo.setDato(dato);
+    public char push(char dato) throws PilaException {
+        NodoPila nuevo = new NodoPila();
+        nuevo.setDato(dato);
 
-            if (cima == null) {
-                cima = nuevo;
-            } else {
-                nuevo.setSiguiente(cima);
-                cima = nuevo;
-            }
-            tam++;
-            return cima.getDato();
+        if (cima == null) {
+            cima = nuevo;
+        } else {
+            nuevo.setSiguiente(cima);
+            cima = nuevo;
         }
-    
+        tam++;
+        return cima.getDato();
+    }
 
-    public int search(String dato) throws PilaException {
+    public int search(char dato) throws PilaException {
         int contador = 0;
         if (cima == null) {
             throw new PilaException("La pila está vacía");
         } else {
-            Nodo actual = cima;
+            NodoPila actual = cima;
             while (actual != null) {
-                if (actual.getDato().equals(dato)) {
+                if (actual.getDato() == dato) {
                     return contador;
                 }
                 contador++;
@@ -74,10 +72,9 @@ public class Pila {
         return -1;
 
     }
-    
+
     public int size() {
         return tam;
     }
-            
 
 }
