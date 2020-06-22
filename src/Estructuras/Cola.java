@@ -5,9 +5,9 @@
  */
 package Estructuras;
 
-//Hola
+//Hola COMMITTT
 /**
- *
+ * CAMBIOS HECHOS Pordehetos
  * @author Emily
  */
 public class Cola {
