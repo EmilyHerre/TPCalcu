@@ -14,6 +14,7 @@ public class Cola {
 
     private Nodo primero, ultimo;
     private int tamaño, elementos;
+    private int go;
 
     // tamaño <= 0 -> INFINITA lo infitnoto
     // tamaño > 0 -> FINITA
