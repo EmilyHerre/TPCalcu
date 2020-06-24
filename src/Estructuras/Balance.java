@@ -15,6 +15,10 @@ public class Balance {
     private Cola ColaFormulaPostfija = new Cola();
     private Pila operators = new Pila();
 
+    public Cola getColaFormulaPostfija() {
+        return ColaFormulaPostfija;
+    }
+
     public void split(String formula) throws ColaException, BalanceException {
         if (esBalanceada(formula) == true) {
             formula = specialOpe(formula);
@@ -28,7 +32,7 @@ public class Balance {
 
     }
 
-    public boolean validLetters(String formula) throws BalanceException {
+    private boolean validLetters(String formula) throws BalanceException {
         for (int i = 0; i < formula.length(); i++) {
             if (Character.isLetterOrDigit(formula.charAt(i)) == true) {
                 if (i != formula.length() - 1) {
@@ -54,7 +58,7 @@ public class Balance {
         return formula;
     }
 
-    public boolean esBalanceada(String formula) {
+    private boolean esBalanceada(String formula) {
 
         Pila pila = new Pila();
 
@@ -96,7 +100,7 @@ public class Balance {
         return Character.isLetterOrDigit(digit) == true;
     }
 
-    public int findPriority(String data) {
+    private int findPriority(String data) {
         for (int i = 0; i < OrdinalOperators.values().length; i++) {
             if (OrdinalOperators.values()[i].getSymbol().equals(data)) {
                 return OrdinalOperators.values()[i].getPriority();
@@ -117,50 +121,53 @@ public class Balance {
         return -1;
 
     }
-  
-
+    
     private void orderPriority(String data1, char data2) throws PilaException, ColaException {
         if (findPriority(data1) < findPriority(String.valueOf(data2))) {
             operators.push(data1.charAt(0));
-        }else {
-           if (data1.equals(")") || data1.equals("}") || data1.equals("]")){
-               while(true) {
-                 if(operators.top() != '('){
-                 ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
-                 }else {
-                     operators.pop();
-                     break;
-                 }
-               }
-           } else {
-               while(!operators.empty()) {
-                   ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
-               }
-               operators.push(data1.charAt(0));
-           }
-           
+        } else {
+            if (data1.equals(")") || data1.equals("}") || data1.equals("]")) {
+                while (true) {
+                    if (operators.top() != '(' && operators.top() != '{' && operators.top() != '[' ) {
+                        ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
+                    } else {
+                        operators.pop();
+                        break;
+                    }
+                }
+            }else if (data1.equals("(") || data1.equals("{") || data1.equals("[")) {
+            operators.push(data1.charAt(0));
+            
+            } else {
+                while (!operators.empty()) {
+                    ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
+                }
+                operators.push(data1.charAt(0));
+            }
+
         }
 
     }
 
     public void formulaPosfija() throws ColaException, PilaException {
-        while(!colaFormulaOriginal.isEmpty()) {
-        String data = colaFormulaOriginal.dequeue();
-        if (isDigitOrLetter(data.charAt(0))) {
-            ColaFormulaPostfija.enqueue(data);
-        } else {
-            if(operators.empty()){
-            operators.push(data.charAt(0));
-            
-            }else {
-                 orderPriority(data, operators.top());
+        while (!colaFormulaOriginal.isEmpty()) {
+            String data = colaFormulaOriginal.dequeue();
+            if (isDigitOrLetter(data.charAt(0))) {
+                ColaFormulaPostfija.enqueue(data);
+            } else {
+                if (operators.empty()) {
+                    operators.push(data.charAt(0));
+
+                } else {
+                    orderPriority(data, operators.top());
+                }
             }
         }
-        }
-        
-        while(!operators.empty()){
-             ColaFormulaPostfija.enqueue(String.valueOf(operators.pop())); 
-    }
-    }
 
+        while (!operators.empty()) {
+            ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
+        }
+    }
+    
+  
 }

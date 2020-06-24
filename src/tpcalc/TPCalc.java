@@ -8,9 +8,12 @@ package tpcalc;
 import Estructuras.Balance;
 import Estructuras.BalanceException;
 import Estructuras.ColaException;
+import Estructuras.LogicCalculate;
 import Estructuras.PilaException;
+import Estructuras.SustitutionLetters;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,6 +29,16 @@ public class TPCalc {
             Balance balance = new Balance();
             balance.split("(A+B)*C-sqrt(4)");
             balance.formulaPosfija();
+            SustitutionLetters sustitution = new SustitutionLetters(balance.getColaFormulaPostfija());
+
+           while(sustitution.cantLetters() != 0) {
+                String letter = sustitution.letters();
+                double data = Double.parseDouble(JOptionPane.showInputDialog(""));
+                sustitution.gg(letter, data);
+            }
+            LogicCalculate calculate = new LogicCalculate(sustitution.getFormulaPostfija());
+            JOptionPane.showMessageDialog(null,calculate.calculate());
+
 ////        try {
         } catch (ColaException ex) {
             Logger.getLogger(TPCalc.class.getName()).log(Level.SEVERE, null, ex);
@@ -35,5 +48,5 @@ public class TPCalc {
             Logger.getLogger(TPCalc.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

@@ -6,27 +6,31 @@
 package Estructuras;
 
 //Hola COMMITTT
+import java.util.ArrayList;
+
 /**
  * CAMBIOS HECHOS Pordehetos
+ *
  * @author Emily
  */
 public class Cola {
 
     private Nodo primero, ultimo;
+    private int tam = 0;
 
     //Encolar encoladero
     public String enqueue(String dato) throws ColaException {
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
-            if (primero == null) {
-                primero = ultimo = nuevo;
-            } else {
-                ultimo.setSiguiente(nuevo);
-                ultimo = nuevo;
-            }
+        if (primero == null) {
+            primero = ultimo = nuevo;
+        } else {
+            ultimo.setSiguiente(nuevo);
+            ultimo = nuevo;
+        }
+        tam++;
         return ultimo.getDato();
     }
-    
 
     //Desencolar
     public String dequeue() throws ColaException {
@@ -38,6 +42,7 @@ public class Cola {
         if (primero == null) {
             ultimo = null;
         }
+        tam--;
         return dato;
     }
 
@@ -52,18 +57,37 @@ public class Cola {
         return primero.getDato();
     }
 
-    public int search(String dato) throws ColaException {
+    public void replace(String dato, double value) throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
         }
 
-        int contador = 0;
         for (Nodo actual = primero; actual != null; actual = actual.getSiguiente()) {
             if (actual.getDato().equals(dato)) {
-                return contador;
+                actual.setDato(String.valueOf(value));
             }
-            contador++;
+
         }
-        return -1;
     }
+
+    public int getTam() {
+        return tam;
+    }
+
+    public ArrayList<String> getLetters() {
+        Nodo temp = primero;
+        ArrayList<String> listLetters = new ArrayList<>();
+        while (temp != null) {
+            if (Character.isLetter(temp.getDato().charAt(0))) {
+                if (!listLetters.contains(temp.getDato())) {
+                    listLetters.add(temp.getDato());
+
+                }
+              
+            }
+              temp = temp.getSiguiente();
+        }
+        return listLetters;
+    }
+
 }
