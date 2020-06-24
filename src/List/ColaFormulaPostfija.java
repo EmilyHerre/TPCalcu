@@ -20,7 +20,12 @@ public class ColaFormulaPostfija {
     private Nodo primero, ultimo;
     private int tam = 0;
 
-    //Encolar encoladero
+    /**
+     *
+     * @param dato
+     * @return
+     * @throws ColaException
+     */
     public String enqueue(String dato) throws ColaException {
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
@@ -34,7 +39,11 @@ public class ColaFormulaPostfija {
         return ultimo.getDato();
     }
 
-    //Desencolar
+    /**
+     *
+     * @return
+     * @throws ColaException
+     */
     public String dequeue() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
@@ -48,10 +57,19 @@ public class ColaFormulaPostfija {
         return dato;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isEmpty() {
         return primero == null;
     }
 
+    /**
+     *
+     * @return
+     * @throws ColaException
+     */
     public String front() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
@@ -59,6 +77,12 @@ public class ColaFormulaPostfija {
         return primero.getDato();
     }
 
+    /**
+     *
+     * @param dato
+     * @param value
+     * @throws ColaException
+     */
     public void replace(String dato, double value) throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
@@ -72,10 +96,18 @@ public class ColaFormulaPostfija {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public int getTam() {
         return tam;
     }
 
+    /**
+     *
+     * @return
+     */
     public ArrayList<String> getLetters() {
         Nodo temp = primero;
         ArrayList<String> listLetters = new ArrayList<>();

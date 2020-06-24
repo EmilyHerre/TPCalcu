@@ -6,11 +6,15 @@
 package Exceptions;
 
 /**
- *
- * @author Emily
+ *  This class manage the exceptions presented during the formula balancing process
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class BalanceException extends Exception{
 
+    /**
+     *
+     * @param message
+     */
     public BalanceException(String message) {
         super(message);
     }

@@ -10,10 +10,30 @@ package Operators;
  * @author Emily
  */
 public enum OrdinalOperators {
+
+    /**
+     *
+     */
     POWER("^", 1),
+
+    /**
+     *
+     */
     MULTIPLICATION("*", 2),
+
+    /**
+     *
+     */
     DIVISION("/", 2),
+
+    /**
+     *
+     */
     SUM("+", 3),
+
+    /**
+     *
+     */
     RES("-", 3);
     
     private String symbol;
@@ -24,18 +44,34 @@ public enum OrdinalOperators {
         this.priority = priority;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSymbol() {
         return symbol;
     }
 
+    /**
+     *
+     * @param symbol
+     */
     public void setSymbol(String symbol) {
         this.symbol = symbol;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPriority() {
         return priority;
     }
 
+    /**
+     *
+     * @param priority
+     */
     public void setPriority(int priority) {
         this.priority = priority;
     }

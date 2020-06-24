@@ -6,12 +6,16 @@
 package Exceptions;
 
 /**
- *
- * @author Emily
+ *  This class handles the exceptions presented in a queue
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class ColaException extends Exception{
     
-      public ColaException(String msg) {
+    /**
+     *
+     * @param msg
+     */
+    public ColaException(String msg) {
         super(msg);
     }
 }

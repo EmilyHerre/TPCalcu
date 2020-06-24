@@ -17,11 +17,21 @@ public class Pila {
     private NodoPila cima;
     private int tam;
 
+    /**
+     *
+     * @return
+     */
     public boolean empty() {
         return cima == null;
     }
 
     //Cima
+
+    /**
+     *
+     * @return
+     * @throws PilaException
+     */
     public char top() throws PilaException {
         if (cima == null) {
             throw new PilaException("La lista está vacía");
@@ -30,6 +40,12 @@ public class Pila {
     }
 
     //Desapilar
+
+    /**
+     *
+     * @return
+     * @throws PilaException
+     */
     public char pop() throws PilaException {
         char dato;
         if (cima == null) {
@@ -44,6 +60,13 @@ public class Pila {
     }
 
     //Apilar
+
+    /**
+     *
+     * @param dato
+     * @return
+     * @throws PilaException
+     */
     public char push(char dato) throws PilaException {
         NodoPila nuevo = new NodoPila();
         nuevo.setDato(dato);
@@ -58,6 +81,12 @@ public class Pila {
         return cima.getDato();
     }
 
+    /**
+     *
+     * @param dato
+     * @return
+     * @throws PilaException
+     */
     public int search(char dato) throws PilaException {
         int contador = 0;
         if (cima == null) {
@@ -76,6 +105,10 @@ public class Pila {
 
     }
 
+    /**
+     *
+     * @return
+     */
     public int size() {
         return tam;
     }

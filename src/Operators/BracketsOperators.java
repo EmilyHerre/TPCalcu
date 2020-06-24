@@ -11,8 +11,19 @@ package Operators;
  */
 public enum BracketsOperators {
     
+    /**
+     *
+     */
     BRACKETSQUARE("[", "]", 4),
+
+    /**
+     *
+     */
     BRACKETCIRCLE("(", ")", 4),
+
+    /**
+     *
+     */
     BRACKETKEYS("{", "}", 4);
     
     private String bracketRight, bracketLeaft;
@@ -24,26 +35,50 @@ public enum BracketsOperators {
         this.priority = priority;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getBracketRight() {
         return bracketRight;
     }
 
+    /**
+     *
+     * @param bracketRight
+     */
     public void setBracketRight(String bracketRight) {
         this.bracketRight = bracketRight;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getBracketLeaft() {
         return bracketLeaft;
     }
 
+    /**
+     *
+     * @param bracketLeaft
+     */
     public void setBracketLeaft(String bracketLeaft) {
         this.bracketLeaft = bracketLeaft;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPriority() {
         return priority;
     }
 
+    /**
+     *
+     * @param priority
+     */
     public void setPriority(int priority) {
         this.priority = priority;
     }

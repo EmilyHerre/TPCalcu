@@ -22,6 +22,13 @@ public class ColaFormulaOriginal {
     private Nodo primero, ultimo;
 
     //Encolar encoladero
+
+    /**
+     *
+     * @param dato
+     * @return
+     * @throws ColaException
+     */
     public String enqueue(String dato) throws ColaException {
         Nodo nuevo = new Nodo();
         nuevo.setDato(dato);
@@ -35,6 +42,12 @@ public class ColaFormulaOriginal {
     }
 
     //Desencolar
+
+    /**
+     *
+     * @return
+     * @throws ColaException
+     */
     public String dequeue() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");
@@ -47,10 +60,19 @@ public class ColaFormulaOriginal {
         return dato;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isEmpty() {
         return primero == null;
     }
 
+    /**
+     *
+     * @return
+     * @throws ColaException
+     */
     public String front() throws ColaException {
         if (primero == null) {
             throw new ColaException("La cola está vacía");

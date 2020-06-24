@@ -11,10 +11,29 @@ package Operators;
  */
 public enum SpecialOperators {
 
+    /**
+     *
+     */
     COS("cos", "#", 1),
+
+    /**
+     *
+     */
     SEN("sen", "%", 1),
+
+    /**
+     *
+     */
     TAN("tan", "&", 1),
+
+    /**
+     *
+     */
     SQRT("sqrt", "$", 1),
+
+    /**
+     *
+     */
     FACTO("facto", "@", 1);
 
     private String description, simbol;
@@ -26,22 +45,42 @@ public enum SpecialOperators {
         this.PRIORITY = 1;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     *
+     * @param description
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getSimbol() {
         return simbol;
     }
 
+    /**
+     *
+     * @param simbol
+     */
     public void setSimbol(String simbol) {
         this.simbol = simbol;
     }
 
+    /**
+     *
+     * @return
+     */
     public int getPRIORITY() {
         return PRIORITY;
     }

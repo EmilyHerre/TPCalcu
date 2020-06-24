@@ -21,6 +21,10 @@ public class LogicCalculate {
     private ColaFormulaPostfija formulaPostfija;
     private PilaNumbers results = new PilaNumbers();
 
+    /**
+     *
+     * @param formulaPostfija
+     */
     public LogicCalculate(ColaFormulaPostfija formulaPostfija) {
         this.formulaPostfija = formulaPostfija;
     }
@@ -92,6 +96,12 @@ public class LogicCalculate {
         return result;
     }
 
+    /**
+     *
+     * @return
+     * @throws ColaException
+     * @throws PilaException
+     */
     public double calculate() throws ColaException, PilaException {
         while (!formulaPostfija.isEmpty()) {
             String data = formulaPostfija.dequeue();

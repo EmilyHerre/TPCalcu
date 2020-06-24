@@ -9,11 +9,15 @@ import javax.swing.JOptionPane;
 
 
 /**
- *
- * @author Emily
+ *  This class handles the exceptions presented in a stack
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class PilaException extends Exception{
 
+    /**
+     *
+     * @param message
+     */
     public PilaException(String message) {
         JOptionPane.showMessageDialog(null, message);
     }
