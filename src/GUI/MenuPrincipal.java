@@ -20,6 +20,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         initComponents();
         this.getContentPane().setBackground(Color.pink);
         this.setLocationRelativeTo(null);
+        this.setTitle("Inicio");
     }
 
     /**

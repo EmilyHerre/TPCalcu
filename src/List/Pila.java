@@ -3,15 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Estructuras;
+package List;
+
+import Nodes.NodoPila;
+import Exceptions.PilaException;
 
 /**
  *
  * @author Nosotras :D
  */
-public class PilaNumbers {
+public class Pila {
 
-    private NodoNumbers cima;
+    private NodoPila cima;
     private int tam;
 
     public boolean empty() {
@@ -19,7 +22,7 @@ public class PilaNumbers {
     }
 
     //Cima
-    public double top() throws PilaException {
+    public char top() throws PilaException {
         if (cima == null) {
             throw new PilaException("La lista está vacía");
         }
@@ -27,8 +30,8 @@ public class PilaNumbers {
     }
 
     //Desapilar
-    public double pop() throws PilaException {
-        double dato;
+    public char pop() throws PilaException {
+        char dato;
         if (cima == null) {
             throw new PilaException("La pila está vacía ");
         } else {
@@ -41,8 +44,8 @@ public class PilaNumbers {
     }
 
     //Apilar
-    public double push(double dato) throws PilaException {
-        NodoNumbers nuevo = new NodoNumbers();
+    public char push(char dato) throws PilaException {
+        NodoPila nuevo = new NodoPila();
         nuevo.setDato(dato);
 
         if (cima == null) {
@@ -53,6 +56,24 @@ public class PilaNumbers {
         }
         tam++;
         return cima.getDato();
+    }
+
+    public int search(char dato) throws PilaException {
+        int contador = 0;
+        if (cima == null) {
+            throw new PilaException("La pila está vacía");
+        } else {
+            NodoPila actual = cima;
+            while (actual != null) {
+                if (actual.getDato() == dato) {
+                    return contador;
+                }
+                contador++;
+                actual = actual.getSiguiente();
+            }
+        }
+        return -1;
+
     }
 
     public int size() {

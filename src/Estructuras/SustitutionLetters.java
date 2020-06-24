@@ -5,6 +5,8 @@
  */
 package Estructuras;
 
+import Exceptions.ColaException;
+import List.ColaFormulaPostfija;
 import java.util.ArrayList;
 
 /**
@@ -13,10 +15,10 @@ import java.util.ArrayList;
  */
 public class SustitutionLetters {
 
-    private Cola formulaPostfija;
+    private ColaFormulaPostfija formulaPostfija;
     private ArrayList<String> listLetters;
 
-    public SustitutionLetters(Cola formulaPostfija) {
+    public SustitutionLetters(ColaFormulaPostfija formulaPostfija) {
         this.formulaPostfija = formulaPostfija;
         this.listLetters = formulaPostfija.getLetters();
     }
@@ -35,7 +37,7 @@ public class SustitutionLetters {
         formulaPostfija.replace(letters, value);
     }
 
-    public Cola getFormulaPostfija() {
+    public ColaFormulaPostfija getFormulaPostfija() {
         return formulaPostfija;
     }
 

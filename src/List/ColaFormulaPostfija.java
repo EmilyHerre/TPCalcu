@@ -3,9 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Estructuras;
+package List;
 
 //Hola COMMITTT
+import Exceptions.ColaException;
+import Nodes.Nodo;
 import java.util.ArrayList;
 
 /**
@@ -13,7 +15,7 @@ import java.util.ArrayList;
  *
  * @author Emily
  */
-public class Cola {
+public class ColaFormulaPostfija {
 
     private Nodo primero, ultimo;
     private int tam = 0;

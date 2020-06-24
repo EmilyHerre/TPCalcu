@@ -5,29 +5,46 @@
  */
 package Estructuras;
 
+import Exceptions.PilaException;
+import Exceptions.ColaException;
+import Exceptions.BalanceException;
+import List.ColaFormulaPostfija;
+import List.ColaFormulaOriginal;
+import List.Pila;
+import Operators.BracketsOperators;
+import Operators.OrdinalOperators;
+import Operators.SpecialOperators;
+
 /**
  *
  * @author Sofia
  */
 public class Balance {
 
-    private Cola colaFormulaOriginal = new Cola();
-    private Cola ColaFormulaPostfija = new Cola();
+    private ColaFormulaOriginal colaFormulaOriginal = new ColaFormulaOriginal();
+    private ColaFormulaPostfija ColaFormulaPostfija = new ColaFormulaPostfija();
     private Pila operators = new Pila();
 
-    public Cola getColaFormulaPostfija() {
+    public ColaFormulaPostfija getColaFormulaPostfija() {
         return ColaFormulaPostfija;
     }
 
     public void split(String formula) throws ColaException, BalanceException {
+        if(formula != null && !formula.isEmpty()){
         if (esBalanceada(formula) == true) {
             formula = specialOpe(formula);
             if (validLetters(formula)) {
                 for (char letra : formula.toCharArray()) {
+                    if(letra != ' '){
                     colaFormulaOriginal.enqueue(String.valueOf(letra));
-
+                    }else {
+                         throw new BalanceException("La formula no debe tener espacios en blanco");
+                    }
                 }
             }
+        }
+      }else {
+        throw new BalanceException("La formula no debe ser null");
         }
 
     }

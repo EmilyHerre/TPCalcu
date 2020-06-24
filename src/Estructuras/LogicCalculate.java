@@ -5,16 +5,23 @@
  */
 package Estructuras;
 
+import Exceptions.PilaException;
+import Exceptions.ColaException;
+import List.ColaFormulaPostfija;
+import List.PilaNumbers;
+import Operators.OrdinalOperators;
+import Operators.SpecialOperators;
+
 /**
  *
  * @author Alana
  */
 public class LogicCalculate {
 
-    private Cola formulaPostfija;
+    private ColaFormulaPostfija formulaPostfija;
     private PilaNumbers results = new PilaNumbers();
 
-    public LogicCalculate(Cola formulaPostfija) {
+    public LogicCalculate(ColaFormulaPostfija formulaPostfija) {
         this.formulaPostfija = formulaPostfija;
     }
 
