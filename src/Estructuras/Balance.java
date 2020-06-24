@@ -139,8 +139,12 @@ public class Balance {
             operators.push(data1.charAt(0));
             
             } else {
-                while (!operators.empty()) {
+                while (!operators.empty()){
+                  if(operators.top() != '(' && operators.top() != '{' &&  operators.top() != '[') {
                     ColaFormulaPostfija.enqueue(String.valueOf(operators.pop()));
+                }else {
+                      break;
+                  }
                 }
                 operators.push(data1.charAt(0));
             }

@@ -27,7 +27,7 @@ public class TPCalc {
     public static void main(String[] args) {
         try {
             Balance balance = new Balance();
-            balance.split("(A+B)*C-sqrt(4)");
+            balance.split("sqrt(a*(a+b))");
             balance.formulaPosfija();
             SustitutionLetters sustitution = new SustitutionLetters(balance.getColaFormulaPostfija());
 
@@ -39,7 +39,7 @@ public class TPCalc {
             LogicCalculate calculate = new LogicCalculate(sustitution.getFormulaPostfija());
             JOptionPane.showMessageDialog(null,calculate.calculate());
 
-////        try {
+
         } catch (ColaException ex) {
             Logger.getLogger(TPCalc.class.getName()).log(Level.SEVERE, null, ex);
         } catch (BalanceException ex) {
