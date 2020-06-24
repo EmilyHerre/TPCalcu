@@ -27,7 +27,7 @@ public class TPCalc {
     public static void main(String[] args) {
         try {
             Balance balance = new Balance();
-            balance.split("sqrt(a*(a+b))");
+            balance.split("((x+2*y)^5)/(4*x-3)");
             balance.formulaPosfija();
             SustitutionLetters sustitution = new SustitutionLetters(balance.getColaFormulaPostfija());
 
