@@ -5,7 +5,7 @@
  */
 package GUI;
 
-import Estructuras.Balance;
+import Estructuras.Balanced;
 import Exceptions.BalanceException;
 import Exceptions.ColaException;
 import Estructuras.LogicCalculate;
@@ -17,15 +17,14 @@ import java.awt.Color;
 import javax.swing.JOptionPane;
 
 /**
+ * The Calculate class is in charge of the mechanics of collecting the data,
+ * that is, the formula entered
  *
- * @author Alana
+ * @author Alana Atencio, Emily Herrera, Vanessa Guido
  */
 public class Calculate extends javax.swing.JDialog {
-              
 
-    /**
-     * Creates new form Calculate
-     */
+    //Builder
     public Calculate(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -207,11 +206,11 @@ public class Calculate extends javax.swing.JDialog {
                 .addComponent(jLabel1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 176, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(screen_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addComponent(screen_tf, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(divition_bt)
                     .addComponent(res_bt)
@@ -225,7 +224,7 @@ public class Calculate extends javax.swing.JDialog {
                     .addComponent(sqrt_bt)
                     .addComponent(cos_bt)
                     .addComponent(facto_bt))
-                .addGap(57, 57, 57)
+                .addGap(30, 30, 30)
                 .addComponent(calculate1_bt)
                 .addGap(31, 31, 31))
         );
@@ -235,7 +234,7 @@ public class Calculate extends javax.swing.JDialog {
 
     private void screen_tfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_screen_tfActionPerformed
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_screen_tfActionPerformed
 
     private void sum_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sum_btActionPerformed
@@ -245,75 +244,72 @@ public class Calculate extends javax.swing.JDialog {
 
     private void res_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_res_btActionPerformed
         // TODO add your handling code here:
-         this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.RES.getSymbol());
+        this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.RES.getSymbol());
     }//GEN-LAST:event_res_btActionPerformed
 
     private void pow_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pow_btActionPerformed
         // TODO add your handling code here:
-         this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.POWER.getSymbol());
+        this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.POWER.getSymbol());
     }//GEN-LAST:event_pow_btActionPerformed
 
     private void divition_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_divition_btActionPerformed
         // TODO add your handling code here:
-         this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.DIVISION.getSymbol());
+        this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.DIVISION.getSymbol());
     }//GEN-LAST:event_divition_btActionPerformed
 
     private void multiplication_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_multiplication_btActionPerformed
         // TODO add your handling code here:
-         this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.MULTIPLICATION.getSymbol());
+        this.screen_tf.setText(this.screen_tf.getText() + OrdinalOperators.MULTIPLICATION.getSymbol());
     }//GEN-LAST:event_multiplication_btActionPerformed
 
     private void sen_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sen_btActionPerformed
         // TODO add your handling code here:
-         this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.SEN.getDescription());
+        this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.SEN.getDescription());
     }//GEN-LAST:event_sen_btActionPerformed
 
     private void tan_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tan_btActionPerformed
         // TODO add your handling code here:
-          this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.TAN.getDescription());
+        this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.TAN.getDescription());
     }//GEN-LAST:event_tan_btActionPerformed
 
     private void cos_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cos_btActionPerformed
         // TODO add your handling code here:
-          this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.COS.getDescription());
+        this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.COS.getDescription());
     }//GEN-LAST:event_cos_btActionPerformed
 
     private void sqrt_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sqrt_btActionPerformed
         // TODO add your handling code here:
-          this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.SQRT.getDescription());
+        this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.SQRT.getDescription());
     }//GEN-LAST:event_sqrt_btActionPerformed
 
     private void facto_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_facto_btActionPerformed
         // TODO add your handling code here:
-          this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.FACTO.getDescription());
+        this.screen_tf.setText(this.screen_tf.getText() + SpecialOperators.FACTO.getDescription());
     }//GEN-LAST:event_facto_btActionPerformed
 
     private void calculate1_btActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculate1_btActionPerformed
         // TODO add your handling code here:
-          try {
-            Balance balance = new Balance();
-            balance.split(this.screen_tf.getText());
-            balance.formulaPosfija();
+        try {
+            Balanced balance = new Balanced(); //Formula balancing
+            balance.checkFormulaBalancing(this.screen_tf.getText());
+            balance.createPostfixFormula();
             SustitutionLetters sustitution = new SustitutionLetters(balance.getColaFormulaPostfija());
-
-           while(sustitution.cantLetters() != 0) {
+            //asks for the value of the variables and substitutes them
+            while (sustitution.countLetters() != 0) {
                 String letter = sustitution.letters();
                 double data = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de la variable " + letter + ":"));
-                sustitution.gg(letter, data);
-            }
+                sustitution.grantValues(letter, data);
+            } //calculates the value of operations and displays it on the screen
             LogicCalculate calculate = new LogicCalculate(sustitution.getFormulaPostfija());
             this.screen_tf.setText(String.valueOf(calculate.calculate()));
             this.screen_tf.setEditable(false);
             this.calculate1_bt.setEnabled(false);
 
-
-        } catch (ColaException | BalanceException  | PilaException ex) {
+        } catch (ColaException | BalanceException | PilaException ex) {
             JOptionPane.showMessageDialog(null, ex.getMessage());
-        } 
+        }
     }//GEN-LAST:event_calculate1_btActionPerformed
 
-   
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton calculate1_bt;

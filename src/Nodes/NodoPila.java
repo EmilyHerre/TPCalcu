@@ -6,42 +6,31 @@
 package Nodes;
 
 /**
- *
- * @author Emily
+ * The node stack class is in charge of generating the union link of an element
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class NodoPila {
-
-    char dato;
+    
+    //Attributes
+    char dato; //char type data
     NodoPila siguiente;
 
-    /**
-     *
-     * @return
-     */
+    
     public char getDato() {
         return dato;
     }
 
-    /**
-     *
-     * @param dato
-     */
+   
     public void setDato(char dato) {
         this.dato = dato;
     }
 
-    /**
-     *
-     * @return
-     */
+    
     public NodoPila getSiguiente() {
         return siguiente;
     }
 
-    /**
-     *
-     * @param siguiente
-     */
+   
     public void setSiguiente(NodoPila siguiente) {
         this.siguiente = siguiente;
     }

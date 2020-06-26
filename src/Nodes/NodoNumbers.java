@@ -6,42 +6,29 @@
 package Nodes;
 
 /**
+ * The node stack numbers class is in charge of generating the union link of an
+ * element
  *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class NodoNumbers {
 
-   double dato;
+    //Attributes
+    double dato; //double type data
     NodoNumbers siguiente;
 
-    /**
-     *
-     * @return
-     */
     public double getDato() {
         return dato;
     }
 
-    /**
-     *
-     * @param dato
-     */
     public void setDato(double dato) {
         this.dato = dato;
     }
 
-    /**
-     *
-     * @return
-     */
     public NodoNumbers getSiguiente() {
         return siguiente;
     }
 
-    /**
-     *
-     * @param siguiente
-     */
     public void setSiguiente(NodoNumbers siguiente) {
         this.siguiente = siguiente;
     }

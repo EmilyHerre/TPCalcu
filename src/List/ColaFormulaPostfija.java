@@ -5,7 +5,7 @@
  */
 package List;
 
-//Hola COMMITTT
+
 import Exceptions.ColaException;
 import Nodes.Nodo;
 import java.util.ArrayList;
