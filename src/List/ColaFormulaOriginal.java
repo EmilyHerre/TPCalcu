@@ -5,7 +5,6 @@
  */
 package List;
 
-//Hola COMMITTT
 
 import Exceptions.ColaException;
 import Nodes.Nodo;
@@ -13,20 +12,20 @@ import Nodes.Nodo;
 
 
 /**
- * CAMBIOS HECHOS Pordehetos
+ * 
  *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Sofia Guido 
  */
 public class ColaFormulaOriginal {
 
     private Nodo primero, ultimo;
 
-    //Encolar encoladero
+    
 
-    /**
-     *
+   /**
+     * This method is responsible for queuing the elements
      * @param dato
-     * @return
+     * @return the element entered
      * @throws ColaException
      */
     public String enqueue(String dato) throws ColaException {
@@ -41,11 +40,11 @@ public class ColaFormulaOriginal {
         return ultimo.getDato();
     }
 
-    //Desencolar
+    
 
     /**
-     *
-     * @return
+     * This method is in charge of removing the elements from the queue
+     * @return the element that was remove 
      * @throws ColaException
      */
     public String dequeue() throws ColaException {
@@ -60,17 +59,17 @@ public class ColaFormulaOriginal {
         return dato;
     }
 
-    /**
-     *
-     * @return
+   /**
+     * This method verifies that the queue is empty
+     * @return true if it is empty or false if it is not
      */
     public boolean isEmpty() {
         return primero == null;
     }
 
     /**
-     *
-     * @return
+     * This method shows the element of the first position
+     * @return the element of the first position
      * @throws ColaException
      */
     public String front() throws ColaException {

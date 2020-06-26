@@ -11,19 +11,17 @@ import Nodes.Nodo;
 import java.util.ArrayList;
 
 /**
- * CAMBIOS HECHOS Pordehetos
- *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Sofia Guido 
  */
 public class ColaFormulaPostfija {
 
     private Nodo primero, ultimo;
     private int tam = 0;
 
-    /**
-     *
-     * @param dato
-     * @return
+     /**
+     * This method is responsible for queuing the elements
+     * @param dato a string containing the formula with operations
+     * @return the element entered 
      * @throws ColaException
      */
     public String enqueue(String dato) throws ColaException {
@@ -40,8 +38,8 @@ public class ColaFormulaPostfija {
     }
 
     /**
-     *
-     * @return
+     * This method is in charge of removing the elements from the queue 
+     * @return the item that takes out
      * @throws ColaException
      */
     public String dequeue() throws ColaException {
@@ -57,17 +55,17 @@ public class ColaFormulaPostfija {
         return dato;
     }
 
-    /**
-     *
-     * @return
+     /**
+     * This method verifies that the queue is empty
+     * @return true if it is empty or false if it is not
      */
     public boolean isEmpty() {
         return primero == null;
     }
 
     /**
-     *
-     * @return
+     * This method shows the element of the first position
+     * @return the element of the first position
      * @throws ColaException
      */
     public String front() throws ColaException {
@@ -77,8 +75,9 @@ public class ColaFormulaPostfija {
         return primero.getDato();
     }
 
-    /**
-     *
+     /**
+     *This class is in charge of assigning priority,
+     * and a symbol to special operators.
      * @param dato
      * @param value
      * @throws ColaException

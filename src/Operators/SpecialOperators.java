@@ -6,34 +6,30 @@
 package Operators;
 
 /**
- *
- * @author Emily
+ * This class is in charge of assigning priority,
+ * and a symbol to special operators.
  */
+
+/**
+ *
+ * @author Emily Herrera, Alana Atencio, Sofia Guido.
+ */
+
 public enum SpecialOperators {
 
-    /**
-     *
-     */
+    
     COS("cos", "#", 1),
 
-    /**
-     *
-     */
+    
     SEN("sen", "%", 1),
 
-    /**
-     *
-     */
+   
     TAN("tan", "&", 1),
 
-    /**
-     *
-     */
+    
     SQRT("sqrt", "$", 1),
 
-    /**
-     *
-     */
+    
     FACTO("facto", "@", 1);
 
     private String description, simbol;
@@ -45,16 +41,16 @@ public enum SpecialOperators {
         this.PRIORITY = 1;
     }
 
-    /**
-     *
-     * @return
+/**
+     * This method returns the description
+     * @return description
      */
     public String getDescription() {
         return description;
     }
 
     /**
-     *
+     * This method assigns the description
      * @param description
      */
     public void setDescription(String description) {
@@ -62,24 +58,24 @@ public enum SpecialOperators {
     }
 
     /**
-     *
-     * @return
+     * This method returns the symbol
+     * @return symbol
      */
     public String getSimbol() {
         return simbol;
     }
 
     /**
-     *
-     * @param simbol
+     * This method assigns the symbol
+     * @param symbol
      */
     public void setSimbol(String simbol) {
         this.simbol = simbol;
     }
 
-    /**
-     *
-     * @return
+/**
+     * This method returns the priority
+     * @return priority
      */
     public int getPRIORITY() {
         return PRIORITY;

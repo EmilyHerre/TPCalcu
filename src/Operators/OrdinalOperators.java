@@ -6,34 +6,29 @@
 package Operators;
 
 /**
+ * This class contains the operators of operations, 
+ * in addition it is in charge of assigning the priority of these. 
+ */
+
+/**
  *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public enum OrdinalOperators {
 
-    /**
-     *
-     */
+    
     POWER("^", 1),
 
-    /**
-     *
-     */
+    
     MULTIPLICATION("*", 2),
 
-    /**
-     *
-     */
+    
     DIVISION("/", 2),
 
-    /**
-     *
-     */
+    
     SUM("+", 3),
 
-    /**
-     *
-     */
+    
     RES("-", 3);
     
     private String symbol;
@@ -45,15 +40,15 @@ public enum OrdinalOperators {
     }
 
     /**
-     *
-     * @return
+     * This method returns the symbol
+     * @return symbol
      */
     public String getSymbol() {
         return symbol;
     }
 
     /**
-     *
+     * This method places the symbol
      * @param symbol
      */
     public void setSymbol(String symbol) {
@@ -61,15 +56,15 @@ public enum OrdinalOperators {
     }
 
     /**
-     *
-     * @return
+     *This method returns the priority
+     * @return priority
      */
     public int getPriority() {
         return priority;
     }
 
     /**
-     *
+     * This method places the priority
      * @param priority
      */
     public void setPriority(int priority) {
