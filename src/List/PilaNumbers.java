@@ -9,7 +9,6 @@ import Nodes.NodoNumbers;
 import Exceptions.PilaException;
 
 /**
- *
  * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class PilaNumbers {

@@ -12,15 +12,11 @@ import Nodes.Nodo;
 
 
 /**
- * 
- *
  * @author Emily Herrera, Alana Atencio, Sofia Guido 
  */
 public class ColaFormulaOriginal {
 
     private Nodo primero, ultimo;
-
-    
 
    /**
      * This method is responsible for queuing the elements
