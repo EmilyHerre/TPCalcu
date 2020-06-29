@@ -25,6 +25,8 @@ public class Calculate extends javax.swing.JDialog {
 
     /**
      * Creates new form Calculate
+     * @param parent
+     * @param modal
      */
     public Calculate(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

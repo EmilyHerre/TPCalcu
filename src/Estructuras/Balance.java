@@ -25,10 +25,20 @@ public class Balance {
     private ColaFormulaPostfija ColaFormulaPostfija = new ColaFormulaPostfija();
     private Pila operators = new Pila();
 
+    /**
+     *
+     * @return
+     */
     public ColaFormulaPostfija getColaFormulaPostfija() {
         return ColaFormulaPostfija;
     }
 
+    /**
+     *
+     * @param formula
+     * @throws ColaException
+     * @throws BalanceException
+     */
     public void split(String formula) throws ColaException, BalanceException {
         if(formula != null && !formula.isEmpty()){
         if (esBalanceada(formula) == true) {
@@ -170,6 +180,11 @@ public class Balance {
 
     }
 
+    /**
+     *
+     * @throws ColaException
+     * @throws PilaException
+     */
     public void formulaPosfija() throws ColaException, PilaException {
         while (!colaFormulaOriginal.isEmpty()) {
             String data = colaFormulaOriginal.dequeue();
