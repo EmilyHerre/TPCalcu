@@ -5,15 +5,12 @@
  */
 package List;
 
-//Hola COMMITTT
 import Exceptions.ColaException;
 import Nodes.Nodo;
 import java.util.ArrayList;
 
 /**
- * CAMBIOS HECHOS Pordehetos
- *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class ColaFormulaPostfija {
 
@@ -21,9 +18,10 @@ public class ColaFormulaPostfija {
     private int tam = 0;
 
     /**
+     * This method is responsible for queuing the elements
      *
-     * @param dato
-     * @return
+     * @param dato a string containing the formula with operations
+     * @return the element entered
      * @throws ColaException
      */
     public String enqueue(String dato) throws ColaException {
@@ -40,8 +38,9 @@ public class ColaFormulaPostfija {
     }
 
     /**
+     * This method is in charge of removing the elements from the queue
      *
-     * @return
+     * @return the item that takes out
      * @throws ColaException
      */
     public String dequeue() throws ColaException {
@@ -58,16 +57,18 @@ public class ColaFormulaPostfija {
     }
 
     /**
+     * This method verifies that the queue is empty
      *
-     * @return
+     * @return true if it is empty or false if it is not
      */
     public boolean isEmpty() {
         return primero == null;
     }
 
     /**
+     * This method shows the element of the first position
      *
-     * @return
+     * @return the element of the first position
      * @throws ColaException
      */
     public String front() throws ColaException {
@@ -78,6 +79,7 @@ public class ColaFormulaPostfija {
     }
 
     /**
+     * This method replace the letter variable with the value assigned
      *
      * @param dato
      * @param value
@@ -97,6 +99,7 @@ public class ColaFormulaPostfija {
     }
 
     /**
+     * The getTam method return size list
      *
      * @return
      */
@@ -105,8 +108,10 @@ public class ColaFormulaPostfija {
     }
 
     /**
+     * The getLetters method collects all the letters of the formula, that is,
+     * the postfix queue and enters them in the arrayList
      *
-     * @return
+     * @return listLetters
      */
     public ArrayList<String> getLetters() {
         Nodo temp = primero;
@@ -117,9 +122,9 @@ public class ColaFormulaPostfija {
                     listLetters.add(temp.getDato());
 
                 }
-              
+
             }
-              temp = temp.getSiguiente();
+            temp = temp.getSiguiente();
         }
         return listLetters;
     }

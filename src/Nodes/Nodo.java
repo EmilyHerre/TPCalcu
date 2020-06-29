@@ -6,42 +6,30 @@
 package Nodes;
 
 /**
+ * The node queue class is in charge of generating the union link of an element
  *
- * @author Emily
+ * @author Emily Herrera, Alana Atencio, Vanessa Guido
+ *
  */
 public class Nodo {
 
-    String dato;
+    //Attributes
+    String dato; //String data
     Nodo siguiente;
 
-    /**
-     *
-     * @return
-     */
+    //sets ang gets
     public String getDato() {
         return dato;
     }
 
-    /**
-     *
-     * @param dato
-     */
     public void setDato(String dato) {
         this.dato = dato;
     }
 
-    /**
-     *
-     * @return
-     */
     public Nodo getSiguiente() {
         return siguiente;
     }
 
-    /**
-     *
-     * @param siguiente
-     */
     public void setSiguiente(Nodo siguiente) {
         this.siguiente = siguiente;
     }

@@ -9,8 +9,7 @@ import Nodes.NodoNumbers;
 import Exceptions.PilaException;
 
 /**
- *
- * @author Nosotras :D
+ * @author Emily Herrera, Alana Atencio, Sofia Guido
  */
 public class PilaNumbers {
 
@@ -18,18 +17,18 @@ public class PilaNumbers {
     private int tam;
 
     /**
-     *
-     * @return
+     * This method indicates if the battery is empty
+     * @return true if it is empty or false if it not 
      */
     public boolean empty() {
         return cima == null;
     }
 
-    //Cima
+    
 
     /**
-     *
-     * @return
+     *This method displays the top item in the stack
+     * @return the top element
      * @throws PilaException
      */
     public double top() throws PilaException {
@@ -39,11 +38,11 @@ public class PilaNumbers {
         return cima.getDato();
     }
 
-    //Desapilar
+  
 
     /**
-     *
-     * @return
+     * This method takes the items off the stack
+     * @return The item that was removed
      * @throws PilaException
      */
     public double pop() throws PilaException {
@@ -59,12 +58,12 @@ public class PilaNumbers {
 
     }
 
-    //Apilar
+    
 
     /**
-     *
+     *This method enter doubles type elements to the stack
      * @param dato
-     * @return
+     * @return el elemento que se ingreso
      * @throws PilaException
      */
     public double push(double dato) throws PilaException {
@@ -81,9 +80,9 @@ public class PilaNumbers {
         return cima.getDato();
     }
 
-    /**
-     *
-     * @return
+     /**
+     * This method shows the size of the stack
+     * @return the size
      */
     public int size() {
         return tam;
